@@ -1016,6 +1016,43 @@
           null
         ]
       },
+      "/home/heavysider/Projects/digidentity/digidentity-bank-app/test/services/transactions/create_service_test.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/models/bank_account.rb": {
         "lines": [
           null,
@@ -1036,25 +1073,25 @@
           null,
           null,
           1,
-          2,
-          2,
+          4,
+          4,
           null,
           null,
           1,
-          3,
-          3,
+          6,
+          6,
           null,
           null,
           1,
           null,
           1,
-          14,
+          19,
           null,
           5,
           null,
           null,
           1,
-          8,
+          13,
           null,
           null
         ]
@@ -1078,7 +1115,7 @@
           1,
           null,
           1,
-          11,
+          14,
           null,
           2,
           2,
@@ -1086,50 +1123,50 @@
           null
         ]
       },
-      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/bank_accounts_controller.rb": {
+      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/services/transactions/create_service.rb": {
         "lines": [
           1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          5,
           null,
           1,
           null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
           3,
           null,
-          1,
-          null,
-          null,
           null,
           1,
           null,
-          1,
-          5,
-          null,
-          null,
-          1,
-          6,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
           0,
           null,
-          null
-        ]
-      },
-      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
+          null,
           null
         ]
       },
@@ -1148,6 +1185,21 @@
           null,
           1,
           null,
+          null
+        ]
+      },
+      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
           null
         ]
       },
@@ -1211,54 +1263,39 @@
           null
         ]
       },
-      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/services/transactions/create_service.rb": {
+      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/bank_accounts_controller.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          5,
+          null,
+          1,
+          null,
+          3,
           null,
           1,
           null,
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          null,
           null,
           1,
-          null,
-          1,
-          1,
-          1,
+          5,
           null,
           null,
           1,
+          6,
           null,
           1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          0,
-          null,
-          0,
-          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1713624329
+    "timestamp": 1713625919
   }
 }
