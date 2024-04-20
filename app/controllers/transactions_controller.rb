@@ -23,7 +23,10 @@ class TransactionsController < ApplicationController
   end
 
   def authorize_user
-    return if current_user.bank_accounts.where(id: params[:bank_account_id]).present?
+    unless current_user.bank_accounts.where(id: params[:bank_account_id]).blank? ||
+           params[:user_id].to_i != current_user.id
+      return
+    end
 
     render json: { error: 'Not Authorized' }, status: :unauthorized
   end

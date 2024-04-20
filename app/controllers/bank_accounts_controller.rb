@@ -21,7 +21,7 @@ class BankAccountsController < ApplicationController
   end
 
   def authorize_user
-    return if current_user.bank_accounts.where(id: params[:id]).present?
+    return unless current_user.bank_accounts.where(id: params[:id]).blank? || params[:user_id].to_i != current_user.id
 
     render file: 'public/401.html', status: :unauthorized
   end
