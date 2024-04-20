@@ -1,0 +1,10 @@
+<div class="row pb-3">
+  <div class="col align-self-start text-start">
+    <div class="btn-group">
+      <%= link_to "All", {status: "all"}, class: "btn btn-primary #{params[:status] == 'all' ? 'active' : ''}" %>
+      <%= link_to "Success", {status: "success"}, class: "btn btn-primary #{params[:status].blank? || params[:status] == 'success' ? 'active' : ''}" %>
+      <%= link_to "In Progress", {status: "in_progress"}, class: "btn btn-primary #{params[:status] == 'in_progress' ? 'active' : ''}" %>
+      <%= link_to "Failed", {status: "failed"}, class: "btn btn-primary #{params[:status] == 'failed' ? 'active' : ''}" %>
+    </div>
+  </div>
+</div>

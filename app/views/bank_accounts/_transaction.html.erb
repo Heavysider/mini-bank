@@ -1,0 +1,11 @@
+<li class="list-group-item list-group-item-<%= transaction_type == 'incoming' ? 'success' : 'warning' %>">
+  <div class="row row-cols-2 py-3">
+    <div class="col-8 text-start">
+      <%= transaction_type == 'incoming' ? "↓ #{transaction.iban_from} - #{transaction.created_at}" : "↑ #{transaction.iban_to} - #{transaction.created_at}" %>
+      <% if transaction.failed? %>
+        - <%= transaction.failure_reason %>
+      <% end %>
+    </div>
+    <div class="col-4 text-end"><%= transaction_type == 'incoming' ? '' : ' - ' %><%= humanized_money_with_symbol transaction.amount %></div>
+  </div>
+</li>
