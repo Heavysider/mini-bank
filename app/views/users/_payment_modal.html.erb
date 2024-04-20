@@ -5,7 +5,7 @@
         <h1 class="modal-title fs-5">Pay now</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form data-controller="payments" data-payments-user-id-value="<%= current_user.id %>" data-action="submit->payments#pay">
+      <form data-controller="payments" data-payments-user-id-value="<%= current_user.id %>" data-action="submit->payments#pay" id="payment">
         <div class="modal-body">
           <div class="alert alert-warning" role="alert" data-payments-target="warningMessage" hidden>
             Your payment is being processed, hang tight!&#128181;

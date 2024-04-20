@@ -46,24 +46,23 @@ class BankAccountTest < ActiveSupport::TestCase
   test ".deposit_in_cents should update BankAccount's balance" do
     amount = 10_000
     bank_account = @user.bank_accounts.first
+    old_balance = bank_account.balance_cents
     bank_account.deposit_in_cents(amount)
-    assert_equal bank_account.balance_cents, amount
+    assert_equal bank_account.balance_cents, old_balance + amount
   end
 
   test ".withdrawal_in_cents should update BankAccount's balance" do
     amount = 10_000
     bank_account = @user.bank_accounts.first
-    bank_account.deposit_in_cents(amount)
+    old_balance = bank_account.balance_cents
     bank_account.withdrawal_in_cents(amount)
-    assert_equal bank_account.balance_cents, 0
+    assert_equal bank_account.balance_cents, old_balance - amount
   end
 
   test '.withdrawal_in_cents should not leave negative balance' do
-    amount = 10_000
     bank_account = @user.bank_accounts.first
-    bank_account.deposit_in_cents(amount)
     assert_raises(ActiveRecord::RecordInvalid, ".withdrawal_in_cents should've raised an exception") do
-      bank_account.withdrawal_in_cents(amount + 1)
+      bank_account.withdrawal_in_cents(bank_account.balance_cents + 1)
     end
   end
 end
