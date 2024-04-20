@@ -36,10 +36,8 @@ module Transactions
       end
     rescue ActiveRecord::RecordNotFound
       transaction.update!(failure_reason: 'Unknown IBAN', status: Transaction.statuses[:failed])
-    rescue ActiveRecord::RecordInvalid => e
+    rescue StandardError => e
       transaction.update!(failure_reason: e.message, status: Transaction.statuses[:failed])
-    rescue StandardError
-      transaction.update!(failure_reason: 'Unknown reason', status: Transaction.statuses[:failed])
     end
   end
 end
