@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+johns_bank_account:
+  id: 1
+  name: Personal Account
+  iban: NL01JOHN1234567890
+  user_id: 1
+
+hanss_bank_account:
+  id: 2
+  name: Personal Account
+  iban: NL01HANS1234567890
+  user_id: 2

@@ -1,0 +1,39 @@
+<div class="modal fade" id="payNow" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Pay now</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form data-controller="payments" data-payments-user-id-value="<%= current_user.id %>" data-action="submit->payments#pay">
+        <div class="modal-body">
+          <div class="alert alert-warning" role="alert" data-payments-target="warningMessage" hidden>
+            Your payment is being processed, hang tight!&#128181;
+          </div>
+          <div class="alert alert-danger" role="alert" data-payments-target="errorMessage" hidden>
+            An error occurred! Don't worry, your money are safe... most likely&#129335;
+          </div>
+          <div class="input-group">
+            <span class="input-group-text">IBAN</span>
+            <input data-payments-target="iban" type="text" class="form-control" pattern="[A-Z]{2}\d{2}[A-Z]{4}\d{10}" autocomplete="nope" required>
+          </div>
+          <div class="form-text mb-3">Plese enter the IBAN in NL01AAAA1234567890 format</div>
+          <div class="input-group">
+            <span class="input-group-text">€</span>
+            <input type="text" data-payments-target="amount" class="form-control" pattern="[0-9]*(\.[0-9]{1,2})?" inputmode="decimal" autocomplete="nope" required>
+          </div>
+          <div class="form-text mb-3">Plese enter the amount in 123.45 format</div>
+          <select class="form-select" data-payments-target="bankAccountId">
+            <% current_user.bank_accounts.each do |bank_account| %>
+              <option value="<%= bank_account.id %>" data-iban="<%= bank_account.iban %>"><%= bank_account.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Pay now!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

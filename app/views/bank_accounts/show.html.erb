@@ -1,0 +1,63 @@
+<div class="container text-center mt-5">
+  <div class="row">
+    <%= render "users/user_info" %>
+    <div class="col">
+      <div class="row row-cols-2 pb-3">
+        <div class="col-1">
+          <div class="d-grid">
+            <%= link_to "←", user_path(current_user), class: "btn btn-primary py-3 text-start" %>
+          </div>
+        </div>
+        <div class="col-11">
+          <div class="d-grid">
+            <button class="btn btn-primary py-3 text-start">
+              <div class="row row-cols-2">
+                <div class="col-8 text-start"><%= @bank_account.name %> - <%= @bank_account.iban %></div>
+                <div class="col-4 text-end"><%= humanized_money_with_symbol @bank_account.balance %></div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row pb-3">
+        <div class="col align-self-start text-start">
+          <div class="btn-group">
+            <%= link_to "All", {status: "all"}, class: "btn btn-primary #{params[:status] == 'all' ? 'active' : ''}" %>
+            <%= link_to "Success", {status: "success"}, class: "btn btn-primary #{params[:status].blank? || params[:status] == 'success' ? 'active' : ''}" %>
+            <%= link_to "In Progress", {status: "in_progress"}, class: "btn btn-primary #{params[:status] == 'in_progress' ? 'active' : ''}" %>
+            <%= link_to "Failed", {status: "failed"}, class: "btn btn-primary #{params[:status] == 'failed' ? 'active' : ''}" %>
+          </div>
+        </div>
+      </div>
+      <ul class="list-group">
+        <% @transactions.each do |transaction| %>
+          <% if @bank_account.iban == transaction.iban_to %>
+            <li class="list-group-item list-group-item-success">
+              <div class="row row-cols-2 py-3">
+                <div class="col-8 text-start">
+                  ↓ <%= transaction.iban_from %> - <%= transaction.created_at %>
+                  <% if transaction.failed? %>
+                    - <%= transaction.failure_reason %>
+                  <% end %>
+                </div>
+                <div class="col-4 text-end"><%= humanized_money_with_symbol transaction.amount %></div>
+              </div>
+            </li>
+          <% else %>
+            <li class="list-group-item list-group-item-warning">
+              <div class="row row-cols-2 py-3">
+                <div class="col-8 text-start">
+                  ↑ <%= transaction.iban_to %> - <%= transaction.created_at %>
+                  <% if transaction.failed? %>
+                    - <%= transaction.failure_reason %>
+                  <% end %>
+                </div>
+                <div class="col-4 text-end"> - <%= humanized_money_with_symbol transaction.amount %></div>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

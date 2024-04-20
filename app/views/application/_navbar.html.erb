@@ -1,0 +1,12 @@
+<nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <%= link_to root_path, class: "navbar-brand mx-auto" do %>
+          <%= image_tag('logo.png', class: "rounded-circle logo") %>
+        <% end %>
+        <% if current_user.present? %>
+          <%= link_to 'My bank', user_path(current_user), class: "btn btn-outline-success" %>
+        <% else %>
+          <%= link_to 'Login', new_user_session_path(current_user), class: "btn btn-outline-success" %>
+        <% end %>
+      </div>
+    </nav>
