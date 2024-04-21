@@ -22,8 +22,8 @@ Simple online banking app that includes these features:
 
 ## Technologies used
 
-- `sqlite` as a database, was used to simplify the docker setup. In production has to be changed to Postres or MySQL
-- `activejob` was used to perform asynchronous processing of the transactions to assure high potential throughput. I've used the default in-memory adapter for the prototyping purposes because of ease of setup, I would probably use Sidekiq + Redis on an actual project
+- `sqlite` as a database, was used to simplify the docker setup. In production has to be changed to Postgres or MySQL
+- `activejob` was used to perform asynchronous processing of the transactions to ensure high potential throughput. I've used the default in-memory adapter for the prototyping purposes because of ease of setup, I would probably use Sidekiq + Redis on an actual project
 - `minitest` - covered main functionality with unit and integration tests, coverage report can be found in `coverage/index.html`
 
 ## Notes
@@ -37,4 +37,4 @@ Both of them have Bank accounts with randomized balance between 100 and 200 Euro
 
 In order to check the 'transferring money' functionality just check `BankAccounts.all` in rails console and check IBANs. Then you can enter those IBANs in the form on the website, alongside with the amount you wish to transfer.
 
-Also the fact the the Transaction can still be created even if the amount entered would lower the balance into negative is left their intentionally to kind of show that if the Transaction fails, thanks to `ActiveRecord::Base.transaction` the actual transfer will not be completed and Transaction will be rolled back. Of course a better way would be to notify user in the UI that they can't perform a transaction due to low balance and not to initiate a transaction :)
+Also, the fact that the Transaction can still be created even if the amount entered would lower the balance into the negative is left there intentionally. This serves to show that if the Transaction fails, thanks to `ActiveRecord::Base.transaction`, the actual transfer will not be completed, and the Transaction will be rolled back. Of course a better way would be to notify user in the UI that they can't perform a transaction due to low balance and not to initiate a transaction :)
