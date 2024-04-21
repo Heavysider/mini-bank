@@ -21,6 +21,11 @@
       </div>
       <%= render 'filters' %>
       <ul class="list-group">
+        <% if @transactions.blank? %>
+          <div class="container text-center">
+            <h1 class="pt-4">There are no transactions to show here yet</h1>
+          </div>
+        <% end %>
         <% @transactions.each do |transaction| %>
           <% if @bank_account.iban == transaction.iban_to %>
             <%= render partial: 'transaction', locals: { transaction: transaction, transaction_type: 'incoming' } %>
