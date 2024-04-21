@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class UserFlowTest < ActionDispatch::IntegrationTest
+  test 'can login' do
+    user = users(:john)
+    get new_user_session_url
+    post user_session_url(user: { email: user.email, password: 'Yippee-ki-yay' })
+    assert_redirected_to user_url(user)
+  end
+
   test 'can see the User page' do
     user = users(:john)
     sign_in user
