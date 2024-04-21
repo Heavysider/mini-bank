@@ -35,6 +35,6 @@ Initially database is populated with 2 users:
 
 Both of them have Bank accounts with randomized balance between 100 and 200 Euros
 
-In order to check the 'transferring money' functionality just check `BankAccounts.all` in rails console and check IBANs. Then you can enter those IBANs in the form on the website, alongside with the amount you wish to transfer.
+In order to check the 'transferring money' functionality just check `BankAccount.all` in rails console and check IBANs. Then you can enter those IBANs in the form on the website, alongside with the amount you wish to transfer.
 
 Also, the fact that the Transaction can still be created even if the amount entered would lower the balance into the negative is left there intentionally. This serves to show that if the Transaction fails, thanks to `ActiveRecord::Base.transaction`, the actual transfer will not be completed, and the Transaction will be rolled back. Of course a better way would be to notify user in the UI that they can't perform a transaction due to low balance and not to initiate a transaction :)
