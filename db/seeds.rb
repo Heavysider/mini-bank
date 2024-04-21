@@ -4,6 +4,22 @@
 #
 # Example:
 #
-# ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#   MovieGenre.find_or_create_by!(name: genre_name)
-# end
+john = User.create(
+  first_name: 'John',
+  last_name: 'McClane',
+  email: 'john.mcclane@diehard.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
+hans = User.create(
+  first_name: 'Hans',
+  last_name: 'Gruber',
+  email: 'hans.gruber@diehard.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
+[john, hans].each do |user|
+  user.bank_accounts.first.deposit_in_cents(rand(10_000..20_000))
+end
