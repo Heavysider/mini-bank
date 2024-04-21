@@ -2,19 +2,19 @@
   <h2>Log in</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="mb-3">
-      <%= f.label :email, class: 'form-label', for: 'exampleInputEmail1' %><br />
-      <%= f.email_field :email, class: "form-control", id: "exampleInputEmail1", autofocus: true %>
+      <%= f.label :email, class: 'form-label', for: 'login-email' %><br>
+      <%= f.email_field :email, class: "form-control", id: "login-email", autofocus: true %>
     </div>
 
     <div class="mb-3">
-      <%= f.label :password, class: 'form-label', for: 'exampleInputPassword1' %><br />
-      <%= f.password_field :password, class: "form-control", id: "exampleInputPassword1" %>
+      <%= f.label :password, class: 'form-label', for: 'login-password' %><br>
+      <%= f.password_field :password, class: "form-control", id: "login-password" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
       <div class="mb-3 form-check">
-        <%= f.check_box :remember_me, class: "form-check-input", id: "exampleCheck1" %>
-        <%= f.label :remember_me, class: "form-check-label", for: "exampleCheck1" %>
+        <%= f.check_box :remember_me, class: "form-check-input", id: "login-remember-me" %>
+        <%= f.label :remember_me, class: "form-check-label", for: "login-remember-me" %>
       </div>
     <% end %>
 

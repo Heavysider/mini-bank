@@ -1,7 +1,6 @@
 # Class represents a User of our Digi Bank
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :trackable
+  devise :database_authenticatable, :rememberable, :validatable, :trackable
 
   has_many :bank_accounts
 
