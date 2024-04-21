@@ -1,15 +1,6 @@
 
 # Digi Bank App
 
-## Startup instructions
-
-The simplest way:
-1) `docker pull heavysider/bank-app`
-2) `docker run --rm -it -p 3000:3000 heavysider/bank-app`
-3) `docker exec -it <your docker container id found via 'docker ps' command> ./bin/rails c` - to connect to Rails console and play around with data
-
-The longer way of course would be to install required versions of `ruby`, `yarn` and install all of the dependencies. All of the exact versions needed can be found in `Dockerfile`
-
 ## Overview
 
 Simple online banking app that includes these features:
@@ -19,6 +10,15 @@ Simple online banking app that includes these features:
 	- balance of their bank account
 	- transactions and their statuses 
 4) Users can transfer money between each other's accounts
+
+## Startup instructions
+
+The simplest way:
+1) `docker pull heavysider/bank-app`
+2) `docker run --rm -it -p 3000:3000 heavysider/bank-app`
+3) `docker exec -it <your docker container id found via 'docker ps' command> ./bin/rails c` - to connect to Rails console and play around with data
+
+The longer way of course would be to install required versions of `ruby`, `yarn` and install all of the dependencies. All of the exact versions needed can be found in `Dockerfile`
 
 ## Technologies used
 
