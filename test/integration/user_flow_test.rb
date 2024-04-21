@@ -8,6 +8,14 @@ class UserFlowTest < ActionDispatch::IntegrationTest
     assert_redirected_to user_url(user)
   end
 
+  test "can't login with incorrect credentials" do
+    user = users(:john)
+    get new_user_session_url
+    post user_session_url(user: { email: user.email, password: 'Yippee-ki-yay mthfcka' })
+    assert_response 422, @response.body.to_s
+    assert_select 'div.alert-danger', 'Invalid Email or password.'
+  end
+
   test 'can see the User page' do
     user = users(:john)
     sign_in user

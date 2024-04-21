@@ -762,11 +762,15 @@
           1,
           1,
           1,
-          null,
+          1,
           null,
           null,
           1,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -1133,38 +1137,6 @@
           null
         ]
       },
-      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/bank_accounts_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          5,
-          null,
-          1,
-          null,
-          3,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          5,
-          null,
-          null,
-          1,
-          6,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
       "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/application_controller.rb": {
         "lines": [
           1,
@@ -1177,6 +1149,61 @@
       "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/transactions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -1250,7 +1277,7 @@
           null
         ]
       },
-      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/transactions_controller.rb": {
+      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/bank_accounts_controller.rb": {
         "lines": [
           1,
           1,
@@ -1258,47 +1285,24 @@
           1,
           null,
           1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
+          5,
           null,
           1,
           null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          2,
+          3,
           null,
           1,
           null,
           null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/home/heavysider/Projects/digidentity/digidentity-bank-app/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           null,
           1,
           null,
           1,
+          5,
+          null,
           null,
           1,
-          4,
+          6,
           null,
           1,
           null,
@@ -1306,6 +1310,6 @@
         ]
       }
     },
-    "timestamp": 1713723724
+    "timestamp": 1713724162
   }
 }
